@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		855AC3352643EEA1008BBE17 /* MemoryGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855AC3342643EEA1008BBE17 /* MemoryGameViewController.swift */; };
+		855AC33726441AD2008BBE17 /* MyViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855AC33626441AD2008BBE17 /* MyViews.swift */; };
 		85EA5688263D4BC0004023C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EA5687263D4BC0004023C5 /* AppDelegate.swift */; };
 		85EA568A263D4BC0004023C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EA5689263D4BC0004023C5 /* SceneDelegate.swift */; };
 		85EA568C263D4BC0004023C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EA568B263D4BC0004023C5 /* ViewController.swift */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		855AC3342643EEA1008BBE17 /* MemoryGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameViewController.swift; sourceTree = "<group>"; };
+		855AC33626441AD2008BBE17 /* MyViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViews.swift; sourceTree = "<group>"; };
 		85EA5684263D4BC0004023C5 /* HW1_AviShakuri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HW1_AviShakuri.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85EA5687263D4BC0004023C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85EA5689263D4BC0004023C5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +110,8 @@
 				85EA5690263D4BC0004023C5 /* Assets.xcassets */,
 				85EA5692263D4BC0004023C5 /* LaunchScreen.storyboard */,
 				85EA5695263D4BC0004023C5 /* Info.plist */,
+				855AC3342643EEA1008BBE17 /* MemoryGameViewController.swift */,
+				855AC33626441AD2008BBE17 /* MyViews.swift */,
 			);
 			path = HW1_AviShakuri;
 			sourceTree = "<group>";
@@ -261,6 +267,8 @@
 				85EA568C263D4BC0004023C5 /* ViewController.swift in Sources */,
 				85EA5688263D4BC0004023C5 /* AppDelegate.swift in Sources */,
 				85EA568A263D4BC0004023C5 /* SceneDelegate.swift in Sources */,
+				855AC3352643EEA1008BBE17 /* MemoryGameViewController.swift in Sources */,
+				855AC33726441AD2008BBE17 /* MyViews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

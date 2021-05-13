@@ -1,24 +1,266 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oEZ-Py-WKn">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
+        <scene sceneID="zcQ-fU-wvg">
+            <objects>
+                <viewController id="oEZ-Py-WKn" customClass="ViewController" customModule="HW1_AviShakuri" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QkG-Bt-mvh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="140" translatesAutoresizingMaskIntoConstraints="NO" id="Rtz-P5-UmQ">
+                                <rect key="frame" x="100" y="140" width="214" height="222"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydz-CR-XPV" customClass="RoundedButton" customModule="HW1_AviShakuri" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="214" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <state key="normal" title="Play"/>
+                                        <connections>
+                                            <action selector="btnClick:" destination="oEZ-Py-WKn" eventType="touchUpInside" id="Ugs-c5-Da5"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LAj-QY-yWm" customClass="RoundedButton" customModule="HW1_AviShakuri" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="181" width="214" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <state key="normal" title="TopTen"/>
+                                        <connections>
+                                            <action selector="btnClick:" destination="oEZ-Py-WKn" eventType="touchUpInside" id="N6w-AZ-Td3"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="SD1-68-gs4"/>
+                        <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Rtz-P5-UmQ" firstAttribute="centerX" secondItem="QkG-Bt-mvh" secondAttribute="centerX" id="60e-dY-UrR"/>
+                            <constraint firstItem="Rtz-P5-UmQ" firstAttribute="leading" secondItem="SD1-68-gs4" secondAttribute="leading" constant="100" id="i2Q-d7-n3h"/>
+                            <constraint firstItem="SD1-68-gs4" firstAttribute="trailing" secondItem="Rtz-P5-UmQ" secondAttribute="trailing" constant="100" id="nXV-Oa-GBq"/>
+                            <constraint firstItem="Rtz-P5-UmQ" firstAttribute="top" secondItem="SD1-68-gs4" secondAttribute="top" constant="96" id="vkc-aJ-a7G"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="menu_BTN_play" destination="ydz-CR-XPV" id="bjX-v8-LYf"/>
+                        <outlet property="menu_BTN_topTen" destination="LAj-QY-yWm" id="qHw-az-8An"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qzu-eq-X1U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-717" y="69"/>
+        </scene>
+        <!--Memory Game View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController storyboardIdentifier="MemoryGameViewController" id="BYZ-38-t0r" customClass="MemoryGameViewController" customModule="HW1_AviShakuri" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YIt-E2-nh2">
+                                <rect key="frame" x="5" y="54" width="404" height="454"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" id="7WT-Kz-DpT">
+                                        <rect key="frame" x="0.0" y="0.0" width="404" height="106"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fv0-rP-3DX">
+                                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="106"/>
+                                                <state key="normal" title="Button" image="imgCardMemory"/>
+                                                <connections>
+                                                    <action selector="btnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iSX-5Q-ODL"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t0N-hE-00v">
+                                                <rect key="frame" x="103.5" y="0.0" width="93.5" height="106"/>
+                                                <state key="normal" title="Button" image="imgCardMemory"/>
+                                                <connections>
+                                                    <action selector="btnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="caQ-RM-xZK"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IqT-ep-C4Q">
+                                                <rect key="frame" x="207" y="0.0" width="93.5" height="106"/>
+                                                <state key="normal" title="Button" image="imgCardMemory"/>
+                                                <connections>
+                                                    <action selector="btnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A1P-WK-EI0"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KFn-vF-5XR">
+                                                <rect key="frame" x="310.5" y="0.0" width="93.5" height="106"/>
+                                                <state key="normal" title="Button" image="imgCardMemory"/>
+                                                <connections>
+                                                    <action selector="btnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W9G-sx-G6L"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <viewLayoutGuide key="safeArea" id="x0K-eY-hIA"/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="OQa-3J-5fk">
+                                        <rect key="frame" x="0.0" y="116" width="404" height="106"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zjr-Jt-0Xb">
+                                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="106"/>
+                                                <state key="normal" title="Button" image="imgCardMemory"/>
+                                                <connections>
+                                                    <action selector="btnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="93d-3Y-66e"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DHf-Pd-Cd0">
+                                                <rect key="frame" x="103.5" y="0.0" width="93.5" height="106"/>
+                                                <state key="normal" title="Button" image="imgCardMemory"/>
+                                                <connections>
+                                                    <action selector="btnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BEM-0p-Wau"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qsl-er-eU1">
+                                                <rect key="frame" x="207" y="0.0" width="93.5" height="106"/>
+                                                <state key="normal" title="Button" image="imgCardMemory"/>
+                                                <connections>
+                                                    <action selector="btnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NKu-aO-qdS"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V7o-An-3rT">
+                                                <rect key="frame" x="310.5" y="0.0" width="93.5" height="106"/>
+                                                <state key="normal" title="Button" image="imgCardMemory"/>
+                                                <connections>
+                                                    <action selector="btnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3qd-4O-50H"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Kye-Zo-zDj">
+                                        <rect key="frame" x="0.0" y="232" width="404" height="106"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kl4-bw-kVP">
+                                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="106"/>
+                                                <state key="normal" title="Button" image="imgCardMemory"/>
+                                                <connections>
+                                                    <action selector="btnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1XH-HO-Svy"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mbn-zG-Uo8">
+                                                <rect key="frame" x="103.5" y="0.0" width="93.5" height="106"/>
+                                                <state key="normal" title="Button" image="imgCardMemory"/>
+                                                <connections>
+                                                    <action selector="btnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k41-7B-fRW"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQH-Ir-fUM">
+                                                <rect key="frame" x="207" y="0.0" width="93.5" height="106"/>
+                                                <state key="normal" title="Button" image="imgCardMemory"/>
+                                                <connections>
+                                                    <action selector="btnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EmN-O7-Q0n"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U2s-Kg-576">
+                                                <rect key="frame" x="310.5" y="0.0" width="93.5" height="106"/>
+                                                <state key="normal" title="Button" image="imgCardMemory"/>
+                                                <connections>
+                                                    <action selector="btnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dyo-aO-Cmb"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jUH-Aq-lSP">
+                                        <rect key="frame" x="0.0" y="348" width="404" height="106"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcQ-RQ-f42">
+                                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="106"/>
+                                                <state key="normal" title="Button" image="imgCardMemory"/>
+                                                <connections>
+                                                    <action selector="btnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IEn-4v-ken"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="za2-yb-Z9p">
+                                                <rect key="frame" x="103.5" y="0.0" width="93.5" height="106"/>
+                                                <state key="normal" title="Button" image="imgCardMemory"/>
+                                                <connections>
+                                                    <action selector="btnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VHN-Gk-SwG"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X1K-pI-9CK">
+                                                <rect key="frame" x="207" y="0.0" width="93.5" height="106"/>
+                                                <state key="normal" title="Button" image="imgCardMemory"/>
+                                                <connections>
+                                                    <action selector="btnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dXV-sr-Hf2"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uma-tA-Yzl">
+                                                <rect key="frame" x="310.5" y="0.0" width="93.5" height="106"/>
+                                                <state key="normal" title="Button" image="imgCardMemory"/>
+                                                <connections>
+                                                    <action selector="btnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tvR-86-ofs"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="moves:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eS-uQ-ih7">
+                                <rect key="frame" x="169" y="605" width="76.5" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20.5" id="lV8-jy-o7S"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="asp-1X-vqE">
+                                <rect key="frame" x="171" y="634" width="22.5" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="4ez-97-GT1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="00:00" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OQN-Vb-dVR">
+                                <rect key="frame" x="285" y="829" width="67" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="myTimer:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="1nK-QP-dc6"/>
+                                </connections>
+                            </textField>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="asp-1X-vqE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="171" id="4dx-S5-IH4"/>
+                            <constraint firstItem="OQN-Vb-dVR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="285" id="8rv-U7-c0p"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="asp-1X-vqE" secondAttribute="trailing" symbolic="YES" id="CrM-Pt-l9N"/>
+                            <constraint firstItem="YIt-E2-nh2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="Deu-md-aHx"/>
+                            <constraint firstItem="0eS-uQ-ih7" firstAttribute="top" secondItem="YIt-E2-nh2" secondAttribute="bottom" constant="97" id="QNO-Em-Aa7"/>
+                            <constraint firstItem="asp-1X-vqE" firstAttribute="top" secondItem="0eS-uQ-ih7" secondAttribute="bottom" constant="8.5" id="UWy-oe-jbh"/>
+                            <constraint firstItem="YIt-E2-nh2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="alH-IX-0xj"/>
+                            <constraint firstItem="OQN-Vb-dVR" firstAttribute="top" secondItem="YIt-E2-nh2" secondAttribute="bottom" constant="321" id="k1h-3x-OUL"/>
+                            <constraint firstItem="YIt-E2-nh2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lm8-3w-HoS"/>
+                            <constraint firstItem="YIt-E2-nh2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="nSc-OO-oDh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="YIt-E2-nh2" secondAttribute="bottom" constant="355" id="rKj-aP-9WX"/>
+                            <constraint firstItem="0eS-uQ-ih7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="seQ-19-lz9"/>
+                            <constraint firstItem="YIt-E2-nh2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="y9G-kb-1s2"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mg_LBL_moves" destination="asp-1X-vqE" id="8u2-A9-R2C"/>
+                        <outlet property="mg_TXF_timer" destination="OQN-Vb-dVR" id="GEk-Fi-V1N"/>
+                        <outlet property="verticalStackView" destination="YIt-E2-nh2" id="SE8-LT-F2b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="88.392857142857139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="imgCardMemory" width="512" height="512"/>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
