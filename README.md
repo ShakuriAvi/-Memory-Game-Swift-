@@ -1,6 +1,6 @@
 # Memory-Game
-The program was implemented at Swift.
-The player's goal is to remember where each of the existing pairs cards,
+The app was implemented at Swift.
+Memory game: The game's goal is to remember where each of the existing pairs cards,
 with a minimum of "moves" And in a minimum of time. 
 There are three options in the app:
 1) The game
