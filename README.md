@@ -26,7 +26,7 @@ with the using on map and taking a position of the user while playing.
 The game has two levels. 
 First level: 8 pairs of cards.
 Second level 10 pairs of cards.
-![Screen Shot 2021-05-23 at 15 05 49](https://user-images.githubusercontent.com/65177459/119259806-af1a5280-bbd8-11eb-9be5-cd1ac42fedda.png)
+
 
 
 
