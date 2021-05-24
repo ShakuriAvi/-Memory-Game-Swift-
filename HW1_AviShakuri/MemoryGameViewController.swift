@@ -7,12 +7,18 @@
 
 import UIKit
 
+
+
 class MemoryGameViewController: UIViewController {
     @IBOutlet weak var mg_LBL_moves: UILabel!
 
+    @IBOutlet weak var mg_LBL_name: UILabel!
+    
+    @IBOutlet weak var mg_BTN_saveName: UIButton!
+    @IBOutlet weak var mg_TXF_name: UITextField!
     @IBOutlet weak var verticalStackView: UIStackView!
     @IBOutlet weak var mg_TXF_timer: UITextField!
-    
+   
     var myButtonArr : [UIButton?]=[]
     var randCard=[1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8]
     var dict = [Int:Int]()
@@ -25,9 +31,9 @@ class MemoryGameViewController: UIViewController {
     var second=0
     var minutes=0
     var choice=0
+    var player1 : Player!
+    var player=[String:AnyObject]()
 
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("hi memory game")
@@ -35,8 +41,17 @@ class MemoryGameViewController: UIViewController {
         startGame()
         
         }
-
+    func readLevel(){
+        let preferences = UserDefaults.standard
+        let currentKey = "currentLevel"
+        print(preferences.integer(forKey: currentKey))
+     
+        choice = preferences.integer(forKey: currentKey)
+            
+        
+    }
     func resizeStackView(){
+        readLevel()
         if(choice==1){
             randCard=[1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10]
             let stackView = UIStackView(frame: self.view.bounds)
@@ -53,6 +68,10 @@ class MemoryGameViewController: UIViewController {
         }
     }
     func startGame(){
+        mg_LBL_name.isHidden=true
+        mg_TXF_name.isHidden=true
+        mg_BTN_saveName.isHidden=true
+        
         insertButonToArr()
         randCard.shuffle()
         showImage()
@@ -73,7 +92,7 @@ class MemoryGameViewController: UIViewController {
             image?.isEnabled = false
             image?.setImage(UIImage(named: "c\(randCard[image!.tag])"), for: .normal)
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             for temp in self.myButtonArr{
                 temp?.setImage(UIImage(named: "imgCardMemory"), for: .normal)
                 temp?.isEnabled = true
@@ -95,7 +114,50 @@ class MemoryGameViewController: UIViewController {
         mg_TXF_timer.text = "\(minutes) : \(second)"
     }
     
+    func finishGame(){
+        mg_LBL_name.isHidden=false
+        mg_TXF_name.isHidden=false
+        mg_BTN_saveName.isHidden=false
+        
+    }
+    func writeJson(){
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
+        let data = try! encoder.encode(player1)
+        let temp :String = String(data: data, encoding: .utf8)!
+        UserDefaults.standard.setValue(temp, forKey: "player")
     
+    }
+    func writeDict(){
+
+        
+        let preferences = UserDefaults.standard
+
+        let currentKey = "player"
+
+        let currentdict = player
+        preferences.set(currentdict, forKey: currentKey)
+
+        //  Save to disk
+        let didSave = preferences.synchronize()
+
+        if !didSave {
+            //  Couldn't save (I've never seen this happen in real world testing)
+        }
+
+    }
+    @IBAction func saveGameClick(_ sender: Any) {
+        let _name = mg_TXF_name.text!
+        let _minutes = minutes
+        let _seconds = second
+        let _moves = moves
+       // player1 = Player(name: _name,minutes: _minutes,seconds: _seconds,moves: _moves)
+        player = [ "name": _name as! AnyObject ,"minutes":_minutes as! AnyObject, "seconds":_seconds as! AnyObject,"moves":_moves as! AnyObject] 
+        writeDict()
+       //writeJson()
+        self.dismiss(animated:true,completion:nil)
+
+    }
     
     @IBAction func btnClick(_ sender: UIButton) {
 
@@ -140,17 +202,19 @@ class MemoryGameViewController: UIViewController {
         
         if(score==10 && choice==1){
             timer.invalidate()
+            finishGame()
             
-        }else if(score==8){
+        }else if(score==8 && choice == 0){
             timer.invalidate()
+            finishGame()
         }
         
         
 
     }
 }
-extension UIView {
-    var allSubviews: [UIView] {
-        return self.subviews + self.subviews.map { $0.allSubviews }.joined()
-    }
-}
+//extension UIView {
+//    var allSubviews: [UIView] {
+//        return self.subviews + self.subviews.map { $0.allSubviews }.joined()
+//    }
+
